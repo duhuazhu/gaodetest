@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes"/>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- <% for (var i in
+      htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style" />
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet" />
+	  <% } %> -->
+    <title style="font-size:14px;"></title>
+    <!-- 加载地图JSAPI脚本 -->
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3742287_fvphifnr80q.css">
+    <script type="text/javascript">
+      window._AMapSecurityConfig = {
+        securityJsCode:'4ae3d5c07911a743ccc475c7a256a69d',
+      }
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=87eb6d47424db5c3793551d2b0e1edad&plugin=AMap.Autocomplete,AMap.PlaceSearch,AMap.ToolBar,AMap.Walking,AMap.Geolocation,AMap.MouseTool";></script>
+
+<!--    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>-->
+    <style>
+      *{
+        font-family: '微软雅黑';
+      }
+      .esri-view .esri-view-surface--inset-outline:focus:after{
+        height: 0 !important;
+        width: 0 !important;
+      }
+      html,body{
+        margin: 0px;
+        padding: 0px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- 使用CDN加速的JS文件，配置在vue.config.js下 -->
+    <!-- <% for (var i in
+      htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %> -->
+    <!-- built files will be auto injected -->
+  </body>
+</html>

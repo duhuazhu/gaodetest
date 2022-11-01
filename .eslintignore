@@ -1,0 +1,7 @@
+build/*.js
+src/assets
+src/config
+src/utils
+src/*
+public
+dist
