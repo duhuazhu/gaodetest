@@ -14,7 +14,7 @@ import '@/assets/css/index.scss'
 import 'lib-flexible/flexible.js'
 import axios from 'axios'
 
-axios.defaults.baseURL = "http://localhost:3000/";
+axios.defaults.baseURL = "http://192.168.100.34:3000/";
 axios.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token');
   return config

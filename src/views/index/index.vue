@@ -9,7 +9,6 @@
     <div class="tool">
       <!--      <div @click="path">路线</div>-->
       <el-button icon="el-icon-map-location" @click="people" title="定位"></el-button>
-      <el-button icon="el-icon-location-outline" @click="coordinates" title="坐标"></el-button>
       <el-button icon="iconfont icon-juli" @click="draw('rule')" title="距离测量"></el-button>
       <el-button icon="iconfont icon-mianji" @click="draw('measureArea')" title="面积测量"></el-button>
       <el-button icon="el-icon-delete" @click="deleteDraw()" title="清除标绘"></el-button>
@@ -20,7 +19,7 @@
 <script>
 import { loadVoLteResourceList } from '@/plugins/loadScript.js'
 import { site } from '@/plugins/data'
-import location from '@/assets/images/loaction.png'
+import location_icon from '@/assets/images/loaction.png'
 //可以传入多个地址
 loadVoLteResourceList(['https://cache.amap.com/lbs/static/addToolbar.js', 'https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js'])
 export default {
@@ -97,16 +96,12 @@ export default {
     },
     people() {
       this.marker1 = new AMap.Marker({
-        icon: location,
+        icon: location_icon,
         offset: new AMap.Pixel(-10, -30),
         position: site.userPosition
       })
       this.map.add(this.marker1)
       this.map.setFitView()
-
-    },
-    coordinates() {
-      this.placeSearch.clear()
 
     },
     location(value) {
@@ -125,7 +120,7 @@ export default {
         //关键字查询
         _this.placeSearch = placeSearch
         if (window.flag) {
-          placeSearch.searchNearBy('', site.userPosition, 200, function(status, result) {
+          placeSearch.searchNearBy(value, site.userPosition, 2000, function(status, result) {
             // 根据返回placeSearch 返回的数据 生成地图 marker
             for (let i = 0; i < result.poiList.pois.length; i++) {
               _this.addMarker(result.poiList.pois[i].location.lng, result.poiList.pois[i].location.lat, result.poiList.pois[i])

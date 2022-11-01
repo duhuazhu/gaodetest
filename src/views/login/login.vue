@@ -64,7 +64,7 @@ export default {
         if (res.meta.status === 403) {
           alert(res.meta.msg);
         } else {
-          // alert("登录成功！");
+          alert("登录成功！");
          await _this.$router.push({
            name: 'index',
          })

@@ -23,6 +23,16 @@ module.exports = {
       //  当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
       warnings: false,
       errors: true
+    },
+    proxy: {
+      '/login': {
+        target: 'http://192.168.100.34:3000/login',
+        changOrigin: true
+      },
+      '/register': {
+        target: 'http://192.168.100.34:3000/register',
+        changOrigin: true
+      }
     }
   },
   css: {
